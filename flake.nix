@@ -5,15 +5,27 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, darwin, nixpkgs, home-manager }: {
+  outputs = inputs@{ self, nix-homebrew, darwin, nixpkgs, home-manager }: {
     darwinConfigurations."anuj-macbook" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
+
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = false;
+            user = "anujpokhriyal";
+            autoMigrate = true;
+          };
+        }
         
         ({ pkgs, ... }: {
           
@@ -52,6 +64,8 @@
               "shottr"
               "signal"
               "tailscale-app"
+              "telegram"
+              "whatsapp"
               "zen"
             ];
           };
@@ -88,7 +102,6 @@
 
             trackpad = {
               Clicking = true;
-              TrackpadThreeFingerDrag = true;
             };
 
             screencapture.location = "~/Pictures/Screenshots";
@@ -109,11 +122,11 @@
                 "/Applications/Ghostty.app"
                 "/Applications/Helium.app"
                 "/Applications/Zen.app"
-                "/Users/anujpokhriyal/Applications/Chromium Apps.localized/Immich.app"
+                "/Users/anujpokhriyal/Applications/Immich.app"
                 "/Users/anujpokhriyal/Applications/Home Manager Apps/Feishin.app"
                 "/Applications/Signal.app"
-                "/Users/anujpokhriyal/Applications/Chromium Apps.localized/WhatsApp Web.app"
-                "/Users/anujpokhriyal/Applications/Chromium Apps.localized/Telegram Web.app"
+                "/Applications/WhatsApp.app"
+                "/Applications/Telegram.app"
                 "/System/Applications/Notes.app"
                 "/System/Applications/System Settings.app"
               ];
