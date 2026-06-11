@@ -44,6 +44,10 @@
             enable = true;
             onActivation.cleanup = "none";
             
+            taps = [
+              "kgarner7/feishin"
+            ];
+
             masApps = {
               "Hand Mirror" = 1502839586;
             };
@@ -52,6 +56,7 @@
               "aerospace"
               "appcleaner"
               "blip"
+              "feishin"
               "ghostty"
               "handbrake-app"
               "helium-browser"
@@ -67,6 +72,7 @@
               "telegram"
               "whatsapp"
               "zen"
+              "zed"
             ];
           };
 
@@ -122,8 +128,9 @@
                 "/Applications/Ghostty.app"
                 "/Applications/Helium.app"
                 "/Applications/Zen.app"
+                "/Applications/Zed.app"
                 "/Users/anujpokhriyal/Applications/Immich.app"
-                "/Users/anujpokhriyal/Applications/Home Manager Apps/Feishin.app"
+                "/Applications/Feishin.app"
                 "/Applications/Signal.app"
                 "/Applications/WhatsApp.app"
                 "/Applications/Telegram.app"
@@ -164,9 +171,12 @@
             home.packages = with pkgs; [
               btop
               cmatrix
+              eza
               fastfetch
-              feishin
+              fzf
               neovim
+              pass
+              tmux
               tree
               yazi
             ];
@@ -176,6 +186,7 @@
               enableCompletion = true;
               autosuggestion.enable = true;
               syntaxHighlighting.enable = true;
+
               
               initContent = ''
                 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -191,6 +202,12 @@
                 ".DS_Store"
                 "**/.DS_Store"
               ];
+            };
+
+            programs.fzf = {
+              enable = true;
+              enableZshIntegration = true;
+              defaultOptions = [ "--height 40%" "--border" ];
             };
             
             home.file."Library/Application Support/com.mitchellh.ghostty/config".source = ./dotfiles/ghostty/config;
