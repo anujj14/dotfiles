@@ -153,8 +153,7 @@ if.app-id = 'com.colliderli.iina'
 run = ['layout floating', 'move-node-to-workspace media']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Safari'
-if.window-title-regex = 'Immich'
+if.app-id = 'Immich'
 run = 'move-node-to-workspace media'
 
 # --- Workspace: Social ---
@@ -167,11 +166,11 @@ if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace social'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'WhatsApp'
+if.app-id = 'WhatsApp'
 run = 'move-node-to-workspace social'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Telegram'
+if.app-id = 'Telegram'
 run = 'move-node-to-workspace social'
 
 # --- Workspace: Todo ---
@@ -185,10 +184,10 @@ run = 'move-node-to-workspace todo'
 
 # --- Workspace: Web ---
 [[on-window-detected]]
-if.app-name-regex-substring = 'Helium'
+if.app-id = 'Helium'
 run = 'move-node-to-workspace web'
 
 # --- Workspace: Privt ---
 [[on-window-detected]]
-if.app-name-regex-substring = 'Zen'
+if.app-id = 'Zen'
 run = 'move-node-to-workspace privt'
