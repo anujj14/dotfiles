@@ -31,8 +31,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Anuj Pokhriyal";
-    userEmail = "77380156+anujj14@users.noreply.github.com";
+    settings = {
+    user = {
+      name = "Your Name";
+      email = "your.email@example.com";
+    };
+  };
     ignores = [
       ".DS_Store"
       "**/.DS_Store"

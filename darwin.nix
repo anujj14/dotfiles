@@ -22,7 +22,9 @@
     enable = true;
     onActivation.cleanup = "none";
     
-    taps = [ "kgarner7/feishin" ];
+    taps = [ 
+    "kgarner7/feishin" 
+    ];
 
     masApps = {
       "Hand Mirror" = 1502839586;
