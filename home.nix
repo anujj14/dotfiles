@@ -3,6 +3,7 @@
   home.stateVersion = "24.05";
   
   home.packages = with pkgs; [
+    android-tools
     btop
     cmatrix
     eza
