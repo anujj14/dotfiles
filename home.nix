@@ -51,4 +51,5 @@
   
   home.file."Library/Application Support/com.mitchellh.ghostty/config".source = ./dotfiles/ghostty/config;
   xdg.configFile."aerospace".source = ./dotfiles/aerospace;
+  xdg.configFile."nvim".source = ./dotfiles/nvim;
 }
