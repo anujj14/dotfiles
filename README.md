@@ -84,22 +84,15 @@ Restart your terminal, then verify:
 nix --version
 ```
 
-### 3. Enable flakes + nix-command
-Already set declaratively in `darwin.nix`, but for the *first* run you need them on manually:
-```bash
-mkdir -p ~/.config/nix
-echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
-```
-
-### 4. Clone the repo
+### 3. Clone the repo
 ```bash
 git clone https://github.com/anujj14/dotfiles.git ~/nix-darwin
 cd ~/nix-darwin
 ```
 
-### 5. First switch
+### 4. First switch
 ```bash
-nix run nix-darwin -- switch --flake .#anuj-macbook
+nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake .#anuj-macbook
 ```
 (replace `anuj-macbook` with the hostname from step 0)
 
@@ -109,7 +102,7 @@ exec zsh
 ```
 …and restart the Mac once so the system-level defaults (`dock`, `finder`, `loginwindow`) pick up cleanly.
 
-> If macOS prompts about `orbstack` or any app from an unidentified developer, approve it in **System Settings → Privacy & Security**. One-time thing.
+> If macOS prompts about `iina` or any app from an unidentified developer, approve it in **System Settings → Privacy & Security**. One-time thing.
 
 ---
 
@@ -117,8 +110,8 @@ exec zsh
 
 ### Apply changes after editing the flake
 ```bash
-cd ~/.config/darwin
-darwin-rebuild switch --flake .#anuj-macbook
+cd ~/nix-darwin
+sudo darwin-rebuild switch --flake .#anuj-macbook
 ```
 Idempotent — Nix computes the diff and only touches what changed.
 
@@ -178,7 +171,7 @@ nix develop        # enter the env
 exit               # leave it — nothing installed globally, nothing to uninstall
 ```
 
-Python that breaks the moment you breathe on it? Isolated. `k3d` for one weekend? Isolated. (Python, brew, and `pip` drama — if you know, you know. Nix sidesteps the whole mess.)
+Isolated packages for just one project? Python, brew, and `pip` drama — you know if you have done that. Nix fixes the whole mess.
 
 ---
 
@@ -193,11 +186,11 @@ Python that breaks the moment you breathe on it? Isolated. `k3d` for one weekend
 - Screenshots → `~/Pictures/Screenshots` as `.jpg`. Siri off, Time Machine nagging off, no `.DS_Store` on network/USB volumes.
 - Loginwindow text: **"Stay Away — Anuj Pokhriyal"**.
 
-### Apps (casks — declarative, no `brew install`-and-pray)
+### Apps (casks)
 | App | Why it's here |
 |---|---|
-| **Ghostty** | Default look is so good I barely configure it. Written in Zig. |
-| **AeroSpace** | Tiling WM in native Swift. No SIP disable like yabai — that's not cool. |
+| **Ghostty** | Default look is so good I barely configure it. |
+| **AeroSpace** | Tiling WM in native Swift. No SIP disable like yabai |
 | **Zed** | Opens instantly, real vim bindings, written in Rust. I live in nvim; Zed is for when I actually need to code. |
 | **Zen** | Arc that still gets updates. Firefox-based. f chrome. |
 | **Helium** | Ungoogled, de-bloated Chromium for the few times Chromium is unavoidable. Sips RAM. |
@@ -206,14 +199,13 @@ Python that breaks the moment you breathe on it? Isolated. `k3d` for one weekend
 | **IINA** | Best video player on macOS. |
 | **LocalSend** | Open-source AirDrop. |
 | **Feishin** | Best-looking Navidrome client. Yes it's TypeScript — no better alternative exists. |
-| **Shottr** | Miles better than default screenshots. Quick copy, annotate, done. |
-| **Signal / WhatsApp / Telegram** | Privacy + reality of living in India. |
+| **Shottr** | Miles better than default screenshots. Quick copy, edit, done. |
+| **Signal / WhatsApp / Telegram** | Privacy + have to use what people use :( |
 | **ImageOptim + Handbrake** | Trim photos/videos before they bloat my Immich server. |
 | **AppCleaner** | Because macOS still doesn't know how to uninstall an app. |
 | **Keka** | Because macOS also doesn't know how to handle zips properly. |
-| **Blip** | LocalSend alternative. Some swear by Blip — it's there for them. |
 | **Impactor** | IPA sideloader for iPhone/iPad. FU to Apple for not letting me install what I want on devices I own. |
-| **Hand Mirror** | Quick webcam check before hopping on a call. |
+| **Hand Mirror** | Quick webcam check. |
 
 ### Userland (`home.nix`)
 **CLI packages** (from `nixpkgs-unstable`):
@@ -230,11 +222,11 @@ Python that breaks the moment you breathe on it? Isolated. `k3d` for one weekend
 | **yazi** | File explorer in the terminal. For when I don't want to leave the shell. |
 | **fastfetch** | Updated neofetch. For those cool screenshots. |
 | **tree** | Visual `ls` for viewing file/directory structure. |
-| **pass** | Unix password manager. Replacing macOS Keychain (not fully migrated yet, but trying). |
+| **pass** | Unix password manager. (not fully migrated yet, but trying). |
 | **android-tools** | `adb` into my Android TV and phones. |
 | **cmatrix** | The Matrix screensaver. Pure flex for the screenshot. |
 
-**Shell:** Zsh — macOS default, not separately installed. home-manager just manages it: autosuggestions, syntax highlighting, completion, brew shellenv on init. Starship prompt. Zoxide for `z`. fzf integrated with zsh.
+**Shell:** Zsh — macOS default, not separately installed. home-manager just manages it: autosuggestions, syntax highlighting, completion. Starship prompt. Zoxide for `z`. fzf integrated with zsh.
 
 **Dotfiles symlinked into place:**
 ```
@@ -245,9 +237,9 @@ dotfiles/nvim/           →  ~/.config/nvim/
 
 ---
 
-## 🚫 Deliberately Not Included(was there before)
+## 🚫 Not Included(was there before)
 
-- **Raycast** — wants to be everything, AI-this AI-that. Default Spotlight + the macOS 27 Siri updates are enough. Only thing missing was a clipboard manager and Spotlight's new update gets the job done. Still sucks, but okay.
+- **Raycast** — wants to be everything, AI-this AI-that. Default Spotlight works better with new update. Only thing missing was a clipboard manager and the new update gets the job done with that. Still sucks, but okay.
 - **Sketchybar** — pretty, but the real macOS menu bar is already there and I have to reach for it anyway. The new menu bar lets me remove/rearrange items now (groundbreaking, I know — they finally shipped it). No anxiety-inducing system meters I can already see.
 
 ---
@@ -257,7 +249,7 @@ dotfiles/nvim/           →  ~/.config/nvim/
 - [**LnL7/nix-darwin**](https://github.com/LnL7/nix-darwin) — declarative macOS.
 - [**nix-community/home-manager**](https://github.com/nix-community/home-manager) — declarative home.
 - [**zhaofengli/nix-homebrew**](https://github.com/zhaofengli/nix-homebrew) — declarative Homebrew.
-- [**ChrisTitusTech**](https://www.youtube.com/watch?v=oafpwp0eon4) — the macOS setup video that inspired to do all this. Also inspired to use Nix.
+- [**ChrisTitusTech**](https://www.youtube.com/watch?v=oafpwp0eon4) — the macOS setup video that inspired me to do all this. Also inspired to use Nix.
 - Everyone shipping the open-source apps above.
 
 ---
