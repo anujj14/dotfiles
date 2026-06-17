@@ -33,7 +33,6 @@
     casks = [
       "aerospace"
       "appcleaner"
-      "blip"
       "feishin"
       "ghostty"
       "handbrake-app"
