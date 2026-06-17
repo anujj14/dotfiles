@@ -32,8 +32,8 @@
     enable = true;
     settings = {
     user = {
-      name = "Your Name";
-      email = "your.email@example.com";
+      name = "Anuj Pokhriyal";
+      email = "77380156+anujj14@users.noreply.github.com";
     };
   };
     ignores = [
