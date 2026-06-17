@@ -8,7 +8,6 @@
     cmatrix
     eza
     fastfetch
-    fzf
     neovim
     pass
     tmux
