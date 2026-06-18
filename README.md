@@ -28,22 +28,7 @@ Why Nix over `brew install` lists and `stow` symlinks:
 
 - **Reproducible.** Same flake + same commit = same system. No drift. Roll back with `darwin-rebuild --rollback`.
 - **Atomic.** A switch either fully applies or doesn't. No half-installed state when the network dies.
-- **Layered.** `darwin.nix` owns the system, `home.nix` owns the user, `dotfiles/` owns program configs. Nothing lives only in a GUI preference pane.
-
----
-
-## 📂 Repository Structure
-
-```
-dotfiles/
-├── flake.nix          # entry point — inputs, outputs, darwinSystem
-├── flake.lock         # pinned dependency graph (commit this, always)
-├── darwin.nix         # system layer — Homebrew, macOS defaults, dock, users
-├── home.nix           # user layer — CLI tools, shell, dotfile symlinks
-└── dotfiles/          # config files for aerospace, nvim, ghostty & fastfetch + wallpaper and user.json(nighttab extension)
-```
-
-`flake.nix` wires it together — a `darwinConfiguration` named `anuj-macbook` on `aarch64-darwin`, pulling in `nix-homebrew` and `home-manager` as modules.
+- **Layered.** `darwin.nix` owns the system, `home.nix` owns the user, `config/` owns program configs. Nothing lives only in a GUI preference pane.
 
 ---
 
@@ -64,7 +49,7 @@ Check your current hostname:
 ```bash
 scutil --get LocalHostName
 ```
-Either rename the machine (`sudo scutil --set LocalHostName "your-host"`) or edit `flake.nix` — your call. Also review `darwin.nix` for the `casks` list, `dock.persistent-apps`, and the `loginwindow.LoginwindowText` ("Stay Away — Anuj Pokhriyal") — make them yours or remove them. Same for the configs in `dotfiles/`.
+Either rename the machine (`sudo scutil --set LocalHostName "your-host"`) or edit `flake.nix` — your call. Also review `darwin.nix` for the `casks` list, `dock.persistent-apps`, and the `loginwindow.LoginwindowText` ("Stay Away — Anuj Pokhriyal") — make them yours or remove them. Same for the configs in `config/`.
 
 ### 1. Prerequisites
 ```bash
@@ -102,9 +87,11 @@ exec zsh
 
 ---
 
-### 🌙 NightTab Configuration
-If you like the start page in my browser screenshots, I use the NightTab extension. You can grab my layout file here: **[user.json](./dotfiles/nighttab-batman.json)**.
+## 🌙 NightTab Configuration
+If you like the start page in my browser screenshots, I use the NightTab extension. You can grab my layout file here: **[user.json](./config/nighttab-batman.json)**.
 Just import it via `Settings -> Data -> Restore -> Import from file`.
+
+---
 
 ## 🔁 Day-to-Day Usage
 
@@ -213,7 +200,7 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 
 | Tool | Why |
 |---|---|
-| **neovim** | The best editor. I keep it mostly default — no heavy modding. Config in `dotfiles/nvim/`. |
+| **neovim** | The best editor. I keep it mostly default — no heavy modding. Config in `config/nvim/`. |
 | **tmux** | Terminal multiplexer. You know what it does. |
 | **starship** | So I don't have to configure oh-my-zsh and its bloat. Starship defaults are already the best. |
 | **zoxide** | `cd` with memory. `z proj` jumps to `~/code/projects` after one visit. |

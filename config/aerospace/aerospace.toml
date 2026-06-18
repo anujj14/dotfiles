@@ -33,7 +33,7 @@ outer.right      = 12
 
 [mode.main.binding]
 
-alt-enter = "exec-and-forget open -na 'Ghostty'"
+alt-enter = "exec-and-forget osascript -e 'tell application \"Ghostty\" to new window'"
 
 # Layout controls
 alt-slash = 'layout tiles horizontal vertical'
