@@ -14,11 +14,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 # For Sketchybar 
-exec-on-workspace-change = [
-    '/bin/bash',
-    '-c', 
-    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
+#exec-on-workspace-change = [
+#    '/bin/bash',
+#    '-c', 
+#    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE']
 
 
 [key-mapping]
@@ -57,6 +56,7 @@ alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
 # Workspaces
+alt-0 = 'workspace 0'
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
@@ -68,6 +68,7 @@ alt-t = 'workspace todo'
 alt-w = 'workspace web'
 
 # Move to Workspaces
+alt-shift-0 = 'move-node-to-workspace 0'
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -112,9 +113,6 @@ run = 'layout floating'
 if.app-id = 'net.freemacsoft.AppCleaner'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.daisydiskapp.DaisyDiskStandAlone'
-run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'org.freedownloadmanager.fdm6'
@@ -152,9 +150,6 @@ run = 'move-node-to-workspace media'
 if.app-id = 'com.colliderli.iina'
 run = ['layout floating', 'move-node-to-workspace media']
 
-[[on-window-detected]]
-if.app-id = 'Immich'
-run = 'move-node-to-workspace media'
 
 # --- Workspace: Social ---
 [[on-window-detected]]
@@ -187,7 +182,3 @@ run = 'move-node-to-workspace todo'
 if.app-id = 'Helium'
 run = 'move-node-to-workspace web'
 
-# --- Workspace: Privt ---
-[[on-window-detected]]
-if.app-id = 'Zen'
-run = 'move-node-to-workspace privt'
