@@ -48,8 +48,8 @@
     defaultOptions = [ "--height 40%" "--border" ];
   };
   
-  home.file."Library/Application Support/com.mitchellh.ghostty/config".source = ./dotfiles/ghostty/config;
-  xdg.configFile."aerospace".source = ./dotfiles/aerospace;
-  xdg.configFile."nvim".source = ./dotfiles/nvim;
-  xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
+  home.file."Library/Application Support/com.mitchellh.ghostty/config".source = ./config/ghostty/config;
+  xdg.configFile."aerospace".source = ./config/aerospace;
+  xdg.configFile."nvim".source = ./config/nvim;
+  xdg.configFile."fastfetch".source = ./config/fastfetch;
 }
