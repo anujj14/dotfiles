@@ -40,11 +40,7 @@ dotfiles/
 ├── flake.lock         # pinned dependency graph (commit this, always)
 ├── darwin.nix         # system layer — Homebrew, macOS defaults, dock, users
 ├── home.nix           # user layer — CLI tools, shell, dotfile symlinks
-└── dotfiles/
-    ├── nvim/          # neovim config (lua)
-    ├── aerospace/     # AeroSpace tiling WM config
-    ├── ghostty/       # ghostty terminal config
-    └── wallpaper.jpg  # the wallpaper
+└── dotfiles/          # config files for aerospace, nvim, ghostty & fastfetch + wallpaper and user.json(nighttab extension)
 ```
 
 `flake.nix` wires it together — a `darwinConfiguration` named `anuj-macbook` on `aarch64-darwin`, pulling in `nix-homebrew` and `home-manager` as modules.
@@ -105,6 +101,10 @@ exec zsh
 > If macOS prompts about `iina` or any app from an unidentified developer, approve it in **System Settings → Privacy & Security**. One-time thing.
 
 ---
+
+### 🌙 NightTab Configuration
+If you like the start page in my browser screenshots, I use the NightTab extension. You can grab my layout file here: **[user.json](./dotfiles/nighttab-batman.json)**.
+Just import it via `Settings -> Data -> Restore -> Import from file`.
 
 ## 🔁 Day-to-Day Usage
 
@@ -168,10 +168,11 @@ The whole point of not bloating the main desktop. Drop a `flake.nix` in any proj
 
 ```bash
 nix develop        # enter the env
+
 exit               # leave it — nothing installed globally, nothing to uninstall
 ```
 
-Isolated packages for just one project? Python, brew, and `pip` drama — you know if you have done that. Nix fixes the whole mess.
+Isolated packages for just one project? Python, brew, and `pip` drama — you know it I know it. Nix fixes the whole mess.
 
 ---
 
@@ -226,20 +227,14 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 | **android-tools** | `adb` into my Android TV and phones. |
 | **cmatrix** | The Matrix screensaver. Pure flex for the screenshot. |
 
-**Shell:** Zsh — macOS default, not separately installed. home-manager just manages it: autosuggestions, syntax highlighting, completion. Starship prompt. Zoxide for `z`. fzf integrated with zsh.
+**Shell:** Zsh — macOS default. home-manager manages: autosuggestions, syntax highlighting, completion. Starship prompt. Zoxide for `z`. fzf integrated with zsh.
 
-**Dotfiles symlinked into place:**
-```
-dotfiles/ghostty/config  →  ~/Library/Application Support/com.mitchellh.ghostty/config
-dotfiles/aerospace/      →  ~/.config/aerospace/
-dotfiles/nvim/           →  ~/.config/nvim/
-```
 
 ---
 
 ## 🚫 Not Included(was there before)
 
-- **Raycast** — wants to be everything, AI-this AI-that. Default Spotlight works better with new update. Only thing missing was a clipboard manager and the new update gets the job done with that. Still sucks, but okay.
+- **Raycast** — wants to be everything, AI-this AI-that.Just wanted a dmenu for macos. Default Spotlight works better with new update. Only thing missing was a clipboard manager and the new update gets the job done with that. Still sucks, but okay.
 - **Sketchybar** — pretty, but the real macOS menu bar is already there and I have to reach for it anyway. The new menu bar lets me remove/rearrange items now (groundbreaking, I know — they finally shipped it). No anxiety-inducing system meters I can already see.
 
 ---
