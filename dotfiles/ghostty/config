@@ -4,8 +4,8 @@ copy-on-select = true
 shell-integration = detect        
 
 theme = Catppuccin Mocha
-background-opacity = 0.92
-background-blur-radius = 20        
+background-opacity = 0.82
+background-blur-radius = 7        
 window-padding-x = 18
 window-padding-y = 14
 
