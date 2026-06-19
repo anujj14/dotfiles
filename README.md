@@ -42,7 +42,7 @@ These strings are **mine**, not yours. Change them or the rebuild fails:
 | File | What | Change to |
 |---|---|---|
 | `flake.nix` | `darwinConfigurations."anuj-macbook"` | your hostname |
-| `flake.nix` · `darwin.nix` | `anujpokhriyal` (username + `home`, 3 places) | your short username |
+| `flake.nix` | `username = "anujpokhriyal"` | your short username |
 | `home.nix` | `programs.git.settings.user` (`"Your Name"` / `"your.email@example.com"`) | your git identity |
 
 Check your current hostname:
@@ -87,6 +87,9 @@ exec zsh
 
 > If macOS prompts about `iina` or any app from an unidentified developer, approve it in **System Settings → Privacy & Security**. One-time thing.
 
+> **⚠️ Note on Existing Configs:** If you already have existing dotfiles (like `~/.config/aerospace`), this flake will **not** delete them. Home Manager will safely back them up by appending `.bak` to the folder name before linking the new configs.
+>
+> **📱 Note on Immich (Dock Icon):** The dock configuration expects Immich to be installed as a Safari Web App. After your first switch, open Safari, navigate to your Immich instance, and click `File > Add to Dock`. If you don't use Immich, remove its path from `darwin.nix` before building or just remove dock icon later.
 ---
 
 ## 🌙 NightTab Configuration
@@ -195,7 +198,7 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 | **AppCleaner** | Because macOS still doesn't know how to uninstall an app. |
 | **Keka** | Because macOS also doesn't know how to handle zips properly. |
 | **Impactor** | IPA sideloader for iPhone/iPad. FU to Apple for not letting me install what I want on devices I own. |
-| **Hand Mirror** | Quick webcam check. |
+| **Iris** | Quick webcam check(HandMirror alt). |
 
 ### Userland (`home.nix`)
 **CLI packages** (from `nixpkgs-unstable`):

@@ -1,34 +1,27 @@
-{ pkgs, ... }: {
+{ pkgs, config, username, ... }: {
   
   nix-homebrew = {
     enable = true;
     enableRosetta = false;
-    user = "anujpokhriyal";
+    user = username;
     autoMigrate = true;
   };
 
-  users.users.anujpokhriyal = {
-    name = "anujpokhriyal";
-    home = "/Users/anujpokhriyal";
+  users.users.${username} = {
+    name = username;
+    home = "/Users/${username}";
   };
 
-  system.primaryUser = "anujpokhriyal";
-
-  environment.systemPackages = [
-    pkgs.mas
-  ];
+  system.primaryUser = username;
 
   homebrew = {
     enable = true;
     onActivation.cleanup = "none";
     
     taps = [ 
-    "kgarner7/feishin" 
+      "kgarner7/feishin" 
+      "ahmetb/iris"
     ];
-
-    masApps = {
-      "Hand Mirror" = 1502839586;
-    };
 
     casks = [
       "aerospace"
@@ -40,6 +33,7 @@
       "iina"
       "imageoptim"
       "impactor"
+      "ahmetb/iris/iris"
       "keka"
       "localsend"
       "orbstack"
@@ -103,7 +97,7 @@
         "/Applications/Helium.app"
         "/Applications/Zen.app"
         "/Applications/Zed.app"
-        "/Users/anujpokhriyal/Applications/Immich.app"
+        "${config.users.users.${username}.home}/Applications/Immich.app"
         "/Applications/Feishin.app"
         "/Applications/Signal.app"
         "/Applications/WhatsApp.app"

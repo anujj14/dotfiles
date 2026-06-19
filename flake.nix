@@ -11,9 +11,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-homebrew, darwin, nixpkgs, home-manager }: {
+  outputs = inputs@{ self, nix-homebrew, darwin, nixpkgs, home-manager }:
+  let 
+    username = "anujpokhriyal";
+  in {
     darwinConfigurations."anuj-macbook" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
+      specialArgs = { inherit username; };
       modules = [
         nix-homebrew.darwinModules.nix-homebrew
         ./darwin.nix
@@ -24,7 +28,7 @@
           
           home-manager.backupFileExtension = "bak";
 
-          home-manager.users.anujpokhriyal = import ./home.nix;
+          home-manager.users.${username} = import ./home.nix;
         }
       ];
     };
