@@ -44,6 +44,7 @@ These strings are **mine**, not yours. Change them or the rebuild fails:
 | `flake.nix` | `darwinConfigurations."anuj-macbook"` | your hostname |
 | `flake.nix` | `username = "anujpokhriyal"` | your short username |
 | `home.nix` | `programs.git.settings.user` (`"Your Name"` / `"your.email@example.com"`) | your git identity |
+| `modules/git.nix` | `user.signingkey` | path to your SSH key (or remove signing block) |
 
 Check your current hostname:
 ```bash

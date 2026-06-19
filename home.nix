@@ -1,7 +1,8 @@
 { config, pkgs, ... }: {
   
   home.stateVersion = "24.05";
-  
+
+#cli-tools 
   home.packages = with pkgs; [
     android-tools
     btop
@@ -15,42 +16,26 @@
     yazi
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    initContent = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    '';
-  };
+#config-cli
+  imports = [
+    ./modules/git.nix
+    ./modules/zsh.nix
+    ./modules/fzf.nix
+  ];
 
   programs.starship.enable = true;
   programs.zoxide.enable = true;
 
-  programs.git = {
-    enable = true;
-    settings = {
-    user = {
-      name = "Anuj Pokhriyal";
-      email = "77380156+anujj14@users.noreply.github.com";
-    };
-  };
-    ignores = [
-      ".DS_Store"
-      "**/.DS_Store"
-    ];
-  };
+#config-apps symlinks
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-    defaultOptions = [ "--height 40%" "--border" ];
-  };
-  
   home.file."Library/Application Support/com.mitchellh.ghostty/config".source = ./config/ghostty/config;
+
   xdg.configFile."aerospace".source = ./config/aerospace;
+  
   xdg.configFile."nvim".source = ./config/nvim;
+
   xdg.configFile."fastfetch".source = ./config/fastfetch;
+
   xdg.configFile."btop".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-darwin/config/btop";
+
 }
