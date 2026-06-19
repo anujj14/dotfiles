@@ -19,10 +19,9 @@
 > Built for me. Tried not to bloat it; only stuff I actually use daily. Clone it, rip out what you don't need, make it yours.
 
 ---
+
 <div align="center">
-
-<video src="https://github.com/user-attachments/assets/16a3e905-7066-4095-8f44-93f4bdbace83" autoplay loop muted playsinline></video>
-
+  <video src="https://raw.githubusercontent.com/anujj14/dotfiles/main/assets/Hero.mp4" autoplay loop muted playsinline width="100%"></video>
 </div>
 
 ## 🧭 Overview
@@ -100,7 +99,7 @@ exec zsh
 If you like the start page in my browser screenshots, I use the NightTab extension. You can grab my layout file here: **[user.json](./config/nighttab-batman.json)**.
 Just import it via `Settings -> Data -> Restore -> Import from file`.
 
-![NightTab Start Page](https://private-user-images.githubusercontent.com/77380156/610535972-200c09f3-d410-4092-9481-a8c3a87fbe34.jpeg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODE4ODQxMDgsIm5iZiI6MTc4MTg4MzgwOCwicGF0aCI6Ii83NzM4MDE1Ni82MTA1MzU5NzItMjAwYzA5ZjMtZDQxMC00MDkyLTk0ODEtYThjM2E4N2ZiZTM0LmpwZWc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNjE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDYxOVQxNTQzMjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wYWZlZjI4YjE0MGY3Y2QzMzIzMzVhNWJiOWM2MjM1Njg3NzVmYTFjMjM2YzRmOWEwM2I3YzQ3OTM0YThkOTM3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.RMs8gadJXJvJkHRZIiYrWFD8Fbi19Xb88zMModzo-7Y)
+![NightTab Start Page](./assets/nighttab.jpeg)
 
 ---
 
