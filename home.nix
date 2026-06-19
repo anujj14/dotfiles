@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   
   home.stateVersion = "24.05";
   
@@ -52,4 +52,5 @@
   xdg.configFile."aerospace".source = ./config/aerospace;
   xdg.configFile."nvim".source = ./config/nvim;
   xdg.configFile."fastfetch".source = ./config/fastfetch;
+  xdg.configFile."btop".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-darwin/config/btop";
 }

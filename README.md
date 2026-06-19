@@ -70,6 +70,8 @@ nix --version
 git clone https://github.com/anujj14/dotfiles.git ~/nix-darwin
 cd ~/nix-darwin
 ```
+> ⚠️ A Note on Existing Configs
+If you already have files in your ./config folder don't worry. Home manager is configured to safely backup them by appending `.bak` to their folder name before linking the new configs. Your old setups are safe.
 
 ### 4. First switch
 ```bash
