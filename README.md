@@ -183,7 +183,7 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 |---|---|
 | **Ghostty** | Default look is so good I barely configure it. |
 | **AeroSpace** | Tiling WM in native Swift. No SIP disable like yabai |
-| **JankyBorders** via native `darwin.nix`. borders for active and inactive windows.
+| **JankyBorders** | Via native `darwin.nix`. Borders for active and inactive windows.
 | **Zed** | Opens instantly, real vim bindings, written in Rust. I live in nvim; Zed is for when I actually need to code. |
 | **Zen** | Arc that still gets updates. Firefox-based. f chrome. |
 | **Helium** | Ungoogled, de-bloated Chromium for the few times Chromium is unavoidable. Sips RAM. |
@@ -226,7 +226,7 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 
 ## 🚫 Not Included 
 
-- **Raycast** — wants to be everything, AI-this AI-that.Just wanted a dmenu for macOS. Default Spotlight works better with new update. Only thing missing was a clipboard manager and the new update gets the job done with that. Still sucks, but okay.
+- **Raycast** — wants to be everything, AI-this AI-that. Just wanted a dmenu for macOS. Default Spotlight works better with new update. Only thing missing was a clipboard manager and the new update gets the job done with that. Still sucks, but okay.
 - **Sketchybar** — Very pretty, but an absolute nightmare to configure without installing bloat (fonts, background scripts, Lua compilers). I can see system stats via `btop`, and AeroSpace already shows my current workspace natively in the macOS menu bar anyway. Plus, I have to reach for the native bar for the Control Center and per-app menu regardless. I was using Sketchybar background as transparent so, why bother maintaining it just for aesthetics? Have to stick with the default for now.
 ---
 
