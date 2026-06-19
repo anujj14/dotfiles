@@ -49,6 +49,18 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+#jankyborders
+
+  services.jankyborders = {
+    enable = true;
+    active_color = "0xc0e2e2e3";
+    inactive_color = "0xc02c2e34";   
+    background_color="0x302c2e34";
+    width = 5.0; 
+    style = "round";
+    hidpi = false;
+  };
+
   system.defaults = {
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
     loginwindow.LoginwindowText = "Stay Away - Anuj Pokhriyal";

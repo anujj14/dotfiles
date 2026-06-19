@@ -3,7 +3,7 @@ font-family = "JetBrainsMono Nerd Font"
 copy-on-select = true              
 shell-integration = detect        
 
-theme = Catppuccin Mocha
+theme = Rose Pine
 background-opacity = 0.82
 background-blur-radius = 7        
 window-padding-x = 18

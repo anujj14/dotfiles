@@ -3,14 +3,14 @@
 # ❄️ anuj's dotfiles
 
 **A declarative macOS workspace. Nix Flakes + nix-darwin + home-manager.**
-**Apple Silicon . Terminal-first. Opinionated. Zero bloat.**
+**Apple Silicon. Terminal-first. Opinionated. Zero bloat.**
 
 [![macOS](https://img.shields.io/badge/macOS-Apple_Silicon-000000?style=flat-square&logo=apple&logoColor=white)](#)
 [![Nix Flakes](https://img.shields.io/badge/Nix-Flakes-7E9BE0?style=flat-square&logo=nixos&logoColor=white)](#)
 [![nix-darwin](https://img.shields.io/badge/nix--darwin-system-7E9BE0?style=flat-square&logo=nixos&logoColor=white)](#)
 [![home-manager](https://img.shields.io/badge/home--manager-24.05-7E9BE0?style=flat-square&logo=nixos&logoColor=white)](#)
-[![arch](https://img.shields.io/badge/arch-aarch64--darwin-silver?style=flat-square&logo=apple&logoColor=black)](#)
 [![shell](https://img.shields.io/badge/shell-zsh-89e051?style=flat-square&logo=gnubash&logoColor=white)](#)
+[![AeroSpace](https://img.shields.io/badge/WM-AeroSpace-ebbcba?style=flat-square&logo=git&logoColor=black)](#)
 
 </div>
 
@@ -43,7 +43,7 @@ These strings are **mine**, not yours. Change them or the rebuild fails:
 |---|---|---|
 | `flake.nix` | `darwinConfigurations."anuj-macbook"` | your hostname |
 | `flake.nix` | `username = "anujpokhriyal"` | your short username |
-| `home.nix` | `programs.git.settings.user` (`"Your Name"` / `"your.email@example.com"`) | your git identity |
+| `modules/git.nix` | `programs.git.settings.user` (`"Your Name"` / `"your.email@example.com"`) | your git identity |
 | `modules/git.nix` | `user.signingkey` | path to your SSH key (or remove signing block) |
 
 Check your current hostname:
@@ -183,6 +183,7 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 |---|---|
 | **Ghostty** | Default look is so good I barely configure it. |
 | **AeroSpace** | Tiling WM in native Swift. No SIP disable like yabai |
+| **JankyBorders** via native `darwin.nix`. borders for active and inactive windows.
 | **Zed** | Opens instantly, real vim bindings, written in Rust. I live in nvim; Zed is for when I actually need to code. |
 | **Zen** | Arc that still gets updates. Firefox-based. f chrome. |
 | **Helium** | Ungoogled, de-bloated Chromium for the few times Chromium is unavoidable. Sips RAM. |
@@ -223,11 +224,10 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 
 ---
 
-## 🚫 Not Included(was there before)
+## 🚫 Not Included 
 
-- **Raycast** — wants to be everything, AI-this AI-that.Just wanted a dmenu for macos. Default Spotlight works better with new update. Only thing missing was a clipboard manager and the new update gets the job done with that. Still sucks, but okay.
-- **Sketchybar** — pretty, but the real macOS menu bar is already there and I have to reach for it anyway. The new menu bar lets me remove/rearrange items now (groundbreaking, I know — they finally shipped it). No anxiety-inducing system meters I can already see.
-
+- **Raycast** — wants to be everything, AI-this AI-that.Just wanted a dmenu for macOS. Default Spotlight works better with new update. Only thing missing was a clipboard manager and the new update gets the job done with that. Still sucks, but okay.
+- **Sketchybar** — Very pretty, but an absolute nightmare to configure without installing bloat (fonts, background scripts, Lua compilers). I can see system stats via `btop`, and AeroSpace already shows my current workspace natively in the macOS menu bar anyway. Plus, I have to reach for the native bar for the Control Center and per-app menu regardless. I was using Sketchybar background as transparent so, why bother maintaining it just for aesthetics? Have to stick with the default for now.
 ---
 
 ## 🫡 Acknowledgements
@@ -235,6 +235,9 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 - [**LnL7/nix-darwin**](https://github.com/LnL7/nix-darwin) — declarative macOS.
 - [**nix-community/home-manager**](https://github.com/nix-community/home-manager) — declarative home.
 - [**zhaofengli/nix-homebrew**](https://github.com/zhaofengli/nix-homebrew) — declarative Homebrew.
+- [**nikitabobko/AeroSpace**](https://github.com/nikitabobko/AeroSpace) — for making this awesome window manager for macOS.
+- [**mitchellh/ghostty**](https://github.com/mitchellh/ghostty) — For making the terminal I use and love.
+- [**FelixKratz/JankyBorders**](https://github.com/FelixKratz/JankyBorders) — He does a lot of macOS ricing work. Creator of Sketchybar & JankyBorders. Check him out.
 - [**ChrisTitusTech**](https://www.youtube.com/watch?v=oafpwp0eon4) — the macOS setup video that inspired me to do all this. Also inspired to use Nix.
 - Everyone shipping the open-source apps above.
 
