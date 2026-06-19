@@ -21,7 +21,9 @@
 ---
 
 <div align="center">
-  <video src="https://raw.githubusercontent.com/anujj14/dotfiles/main/assets/Hero.mp4" autoplay loop muted playsinline width="100%"></video>
+
+![hero](https://private-user-images.githubusercontent.com/77380156/610576155-d8c2ed81-7deb-4178-949b-19824d341a83.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODE4ODkwNjgsIm5iZiI6MTc4MTg4ODc2OCwicGF0aCI6Ii83NzM4MDE1Ni82MTA1NzYxNTUtZDhjMmVkODEtN2RlYi00MTc4LTk0OWItMTk4MjRkMzQxYTgzLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjE5VDE3MDYwOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIxY2RkOTRkMTNiMGUzMmMyYzU0M2ZiMWFhNmEyYjgwNjRkZDQ2ZDUxZTZjZmUzNzQxNWE0Y2ZhYmZiODFmY2EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.QGUdPI-L54OS3fFkDKGZ-yuzhAwbTX0kNMjpslvUiDI)
+
 </div>
 
 ## 🧭 Overview
@@ -99,7 +101,7 @@ exec zsh
 If you like the start page in my browser screenshots, I use the NightTab extension. You can grab my layout file here: **[user.json](./config/nighttab-batman.json)**.
 Just import it via `Settings -> Data -> Restore -> Import from file`.
 
-![NightTab Start Page](./assets/nighttab.jpeg)
+![nighttab](https://private-user-images.githubusercontent.com/77380156/610573278-4f866ca4-8b0f-45a2-8566-79c40763c658.jpeg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODE4ODkwNjgsIm5iZiI6MTc4MTg4ODc2OCwicGF0aCI6Ii83NzM4MDE1Ni82MTA1NzMyNzgtNGY4NjZjYTQtOGIwZi00NWEyLTg1NjYtNzljNDA3NjNjNjU4LmpwZWc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNjE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDYxOVQxNzA2MDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yMmFiYTNmZDY2NzVhMzhhODkyOTQ4M2UxY2ZlYmE4MWI4MTg0ODc2MjIzYjc3MWJiMTY3NjQzNmNhNTA3ZGIzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.y4hee8DU_vw5shZ3wT1PCVFJEkQ2s9IuydOh-R6bLYs)
 
 ---
 
