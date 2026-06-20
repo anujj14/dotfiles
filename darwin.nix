@@ -121,7 +121,13 @@
       ];
     };
 
-    CustomUserPreferences = {
+    system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
+    system.defaults.NSGlobalDomain.AppleIconAppearanceTheme = "TintedDark"; 
+
+    system.defaults.CustomUserPreferences = {
+      ".GlobalPreferences" = {
+        AppleAccentColor = 0;  # 0 = Red 
+      };
       "com.apple.Siri" = {
         StatusMenuVisible = false;
         UserHasDeclinedEnable = true;
@@ -134,7 +140,6 @@
         DoNotOfferNewDisksForBackup = true;
       };
     };
-  };
 
   nix.settings.experimental-features = [ "nix-command flakes" ];
   system.stateVersion = 5;

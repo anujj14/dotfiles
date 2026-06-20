@@ -92,7 +92,7 @@ exec zsh
 ---
 
 ## 🌙 NightTab Configuration
-If you like the start page in my browser screenshots, I use the NightTab extension. You can grab my layout file here: **[user.json](./config/nighttab-batman.json)**.
+If you like the start page in my browser screenshots, I use the NightTab extension. You can grab my layout file here: **[user.json](./config/nightTab.json)**.
 Just import it via `Settings -> Data -> Restore -> Import from file`.
 
 ---
