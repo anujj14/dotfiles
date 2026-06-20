@@ -170,19 +170,19 @@ Isolated packages for just one project? Python, brew, and `pip` drama — you kn
 Don't even want a project flake for a single command? `nix shell` drops you into
 a shell with a package available, then forgets about it the moment you leave:
 
-\`\`\`bash
+```bash
 nix shell nixpkgs#ffmpeg
 
 ffmpeg -i input.mp4 output.gif
 
 exit               # ffmpeg is gone from PATH, nothing was "installed"
-\`\`\`
+```
 
 Or skip the subshell entirely and run it as one line:
 
-\`\`\`bash
+```bash
 nix shell nixpkgs#ffmpeg -c ffmpeg -i input.mp4 output.gif
-\`\`\`
+```
 
 No `brew install ffmpeg` you'll forget about six months later, no version
 conflicts with some other tool that also wants `ffmpeg`. The package is pulled
@@ -190,6 +190,7 @@ from the Nix store and cached — so the next `nix shell nixpkgs#ffmpeg` is
 instant — but it never touches your PATH outside that shell or this flake.
 Run `nix-collect-garbage --delete-older-than 14d` occasionally to reclaim disk
 space from packages you've stopped using.
+
 ---
 
 ## ⚙️ What's Inside
