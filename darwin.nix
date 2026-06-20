@@ -49,8 +49,7 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-#jankyborders
-
+  # jankyborders
   services.jankyborders = {
     enable = true;
     active_color = "0xc0f53d3d"; 
@@ -60,8 +59,6 @@
     style = "round";
     hidpi = false;
   };
-
-  system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
 
   system.defaults = {
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
@@ -85,6 +82,10 @@
       "com.apple.trackpad.scaling" = 2.0;
       NSAutomaticCapitalizationEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
+      
+      NSAutomaticWindowAnimationsEnabled = false;
+      AppleInterfaceStyle = "Dark";
+      AppleIconAppearanceTheme = "TintedDark"; 
     };
     
     trackpad = {
@@ -121,10 +122,7 @@
       ];
     };
 
-    system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
-    system.defaults.NSGlobalDomain.AppleIconAppearanceTheme = "TintedDark"; 
-
-    system.defaults.CustomUserPreferences = {
+    CustomUserPreferences = {
       ".GlobalPreferences" = {
         AppleAccentColor = 0;  # 0 = Red 
       };
@@ -140,7 +138,8 @@
         DoNotOfferNewDisksForBackup = true;
       };
     };
+  };
 
-  nix.settings.experimental-features = [ "nix-command flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = 5;
 }
