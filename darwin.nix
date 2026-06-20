@@ -53,9 +53,9 @@
 
   services.jankyborders = {
     enable = true;
-    active_color = "0xc0e2e2e3";
-    inactive_color = "0xc02c2e34";   
-    background_color="0x302c2e34";
+    active_color = "0xc0f53d3d"; 
+    inactive_color = "0xc06b5757";
+    background_color = "0x30160f0f";   
     width = 5.0; 
     style = "round";
     hidpi = false;
