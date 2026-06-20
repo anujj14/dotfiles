@@ -61,6 +61,8 @@
     hidpi = false;
   };
 
+  system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
+
   system.defaults = {
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
     loginwindow.LoginwindowText = "Stay Away - Anuj Pokhriyal";

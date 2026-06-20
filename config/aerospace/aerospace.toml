@@ -1,6 +1,7 @@
-after-startup-command = [
-    'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar'
-]
+#after-startup-command = [
+#    'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar'
+#]
+
 start-at-login = false
 
 # Normalization
